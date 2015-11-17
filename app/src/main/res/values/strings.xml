@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">StudentHelper</string>
+
+    <string name="title_section1">Home</string>
+    <string name="title_section2">Chat</string>
+    <string name="title_section3">Notas</string>
+    <string name="title_section4">Apuntes</string>
+    <string name="title_section5">Juegos</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Filter</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
