@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Created by carlos.cabot on 17/11/15.
@@ -16,6 +17,7 @@ public class HomeFragment extends Fragment {
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
+    private TextView textSection;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -36,6 +38,10 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+        //Como Coger datos3
+        textSection=(TextView) rootView.findViewById(R.id.section_label);
+
         return rootView;
     }
 
