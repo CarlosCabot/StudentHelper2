@@ -1,21 +1,23 @@
-package com.example.carloscabot.studenthelper.main;
+package com.example.carloscabot.studenthelper;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-
-import com.example.carloscabot.studenthelper.R;
-import com.example.carloscabot.studenthelper.fragments.ApuntesFragment;
-import com.example.carloscabot.studenthelper.fragments.ChatFragment;
-import com.example.carloscabot.studenthelper.fragments.HomeFragment;
-import com.example.carloscabot.studenthelper.fragments.JuegosFragment;
-import com.example.carloscabot.studenthelper.fragments.NavigationDrawerFragment;
-import com.example.carloscabot.studenthelper.fragments.NotasFragment;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -34,12 +36,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //SAM - IF login
         /*if(!hasToken){
-            startActivity();
+            startActivity(new Intent(this, LoginActivity.class));
             finish();
         }*/
-
         setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -135,4 +135,7 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
