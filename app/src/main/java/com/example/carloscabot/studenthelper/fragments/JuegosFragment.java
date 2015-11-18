@@ -38,7 +38,9 @@ public class JuegosFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_juegos, container, false);
+
+
         return rootView;
     }
 
@@ -48,4 +50,6 @@ public class JuegosFragment extends Fragment{
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
+
+
 }
