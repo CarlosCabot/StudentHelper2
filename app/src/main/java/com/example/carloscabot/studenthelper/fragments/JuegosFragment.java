@@ -1,4 +1,4 @@
-package com.example.carloscabot.studenthelper;
+package com.example.carloscabot.studenthelper.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,10 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.carloscabot.studenthelper.main.MainActivity;
+import com.example.carloscabot.studenthelper.R;
+
 /**
  * Created by carlos.cabot on 17/11/15.
  */
-public class ChatFragment extends Fragment {
+public class JuegosFragment extends Fragment{
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -21,15 +24,15 @@ public class ChatFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static ChatFragment newInstance(int sectionNumber) {
-        ChatFragment fragment = new ChatFragment();
+    public static JuegosFragment newInstance(int sectionNumber) {
+        JuegosFragment fragment = new JuegosFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public ChatFragment() {
+    public JuegosFragment() {
     }
 
     @Override
@@ -46,5 +49,3 @@ public class ChatFragment extends Fragment {
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
 }
-
-

@@ -1,16 +1,20 @@
-package com.example.carloscabot.studenthelper;
+package com.example.carloscabot.studenthelper.fragments;
 
 import android.app.Activity;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.carloscabot.studenthelper.main.MainActivity;
+import com.example.carloscabot.studenthelper.R;
+
 /**
  * Created by carlos.cabot on 17/11/15.
  */
-public class HomeFragment extends Fragment {
+public class NotasFragment extends Fragment {
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -21,15 +25,15 @@ public class HomeFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static HomeFragment newInstance(int sectionNumber) {
-        HomeFragment fragment = new HomeFragment();
+    public static NotasFragment newInstance(int sectionNumber) {
+        NotasFragment fragment = new NotasFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public HomeFragment() {
+    public NotasFragment() {
     }
 
     @Override
