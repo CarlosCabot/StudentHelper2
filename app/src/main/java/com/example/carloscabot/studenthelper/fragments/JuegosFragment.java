@@ -1,11 +1,14 @@
 package com.example.carloscabot.studenthelper.fragments;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.carloscabot.studenthelper.main.MainActivity;
 import com.example.carloscabot.studenthelper.R;
@@ -13,7 +16,7 @@ import com.example.carloscabot.studenthelper.R;
 /**
  * Created by carlos.cabot on 17/11/15.
  */
-public class JuegosFragment extends Fragment{
+public class JuegosFragment extends Fragment {
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -39,8 +42,6 @@ public class JuegosFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_juegos, container, false);
-
-
         return rootView;
     }
 
@@ -50,6 +51,7 @@ public class JuegosFragment extends Fragment{
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
+
 
 
 }

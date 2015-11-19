@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StudentHelper</string>
+    <string name="app_name">Student Helper</string>
 
     <string name="title_section1">Home</string>
     <string name="title_section2">Chat</string>

@@ -1,7 +1,10 @@
 package com.example.carloscabot.studenthelper.main;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,6 +13,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.carloscabot.studenthelper.R;
 import com.example.carloscabot.studenthelper.clases.SharedPreference;
@@ -38,13 +43,11 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         SharedPreference sharedPreference = new SharedPreference();
 
         if(null==sharedPreference.getValue(this)){
             startActivity(new Intent(this, LoginActivity.class));
         }
-
 
         setContentView(R.layout.activity_main);
 
@@ -114,6 +117,7 @@ public class MainActivity extends AppCompatActivity
 
         //Aqui cambiamos el color de la barra
         actionBar.setBackgroundDrawable(new ColorDrawable(0xff003333));
+
     }
 
 
@@ -123,7 +127,7 @@ public class MainActivity extends AppCompatActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.main, menu);
+            getMenuInflater().inflate(R.menu.global, menu);
             restoreActionBar();
             return true;
         }
@@ -138,10 +142,18 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_example) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickChallenge(View v){
+        //Intent intent = new Intent();
+        //startActivity(intent);
+        CharSequence c = "hola";
+        Context context = getApplicationContext();
+        Toast.makeText(context, c, Toast.LENGTH_LONG).show();
     }
 }
