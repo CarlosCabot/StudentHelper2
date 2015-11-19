@@ -1,10 +1,7 @@
 package com.example.carloscabot.studenthelper.main;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -14,8 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
-import android.widget.Toast;
 
+import com.example.carloscabot.studenthelper.juegosActivity.JuegosActivity;
 import com.example.carloscabot.studenthelper.R;
 import com.example.carloscabot.studenthelper.clases.SharedPreference;
 import com.example.carloscabot.studenthelper.fragments.ApuntesFragment;
@@ -117,9 +114,7 @@ public class MainActivity extends AppCompatActivity
 
         //Aqui cambiamos el color de la barra
         actionBar.setBackgroundDrawable(new ColorDrawable(0xff003333));
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -150,10 +145,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onClickChallenge(View v){
-        //Intent intent = new Intent();
-        //startActivity(intent);
-        CharSequence c = "hola";
-        Context context = getApplicationContext();
-        Toast.makeText(context, c, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, JuegosActivity.class);
+        startActivity(intent);
     }
 }

@@ -60,7 +60,8 @@
         android:textColor="#C3D9D8"
         android:layout_marginBottom="5dp"
         android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="20dp"
+        android:onClick="onClickChallenge" />
 
     <Button
         android:layout_width="match_parent"
@@ -75,10 +76,11 @@
         android:textColor="#C3D9D8"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="50dp"
+        android:onClick="onClickChallenge" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Question"
         android:id="@+id/button4"
@@ -88,5 +90,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:onClick="onClickQuestion"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
 </LinearLayout>

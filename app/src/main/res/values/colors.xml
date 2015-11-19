@@ -22,4 +22,5 @@
 
     <drawable name="custom_green_light">#3C7F7A</drawable>
     <drawable name="custom_green_dark">#1E6661</drawable>
+    <drawable name="custom_green_darkest">#003333</drawable>
 </resources>
