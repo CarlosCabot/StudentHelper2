@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         SharedPreference sharedPreference = new SharedPreference();
-
-
 
         if(null==sharedPreference.getValue(this)){
             startActivity(new Intent(this, LoginActivity.class));
         }
+
 
         setContentView(R.layout.activity_main);
 
