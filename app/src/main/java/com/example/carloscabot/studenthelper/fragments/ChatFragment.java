@@ -56,13 +56,13 @@ public class ChatFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rcview.setLayoutManager(llm);
         /*Creacion de los elementos de la lista en modo HARDCODE*/
-        List<ChatClase> listaChat = Arrays.asList(new ChatClase(R.mipmap.ic_launcher, "Filologia Inglesa e Hispanica"),
-                                                  new ChatClase(R.mipmap.ic_launcher, "Traduccion e Interpretacion"),
-                                                  new ChatClase(R.mipmap.ic_launcher, "Linguistica"),
-                                                  new ChatClase(R.mipmap.ic_launcher, "Gramatica Inglesa"),
-                                                  new ChatClase(R.mipmap.ic_launcher, "Usos basicos de la lengua Inglesa"),
-                                                  new ChatClase(R.mipmap.ic_launcher, "Ciencias de la Salud"),
-                                                  new ChatClase(R.mipmap.ic_launcher, "AudioVisuales")
+        List<ChatClase> listaChat = Arrays.asList(new ChatClase(R.mipmap.libro, "Filologia Inglesa e Hispanica"),
+                                                  new ChatClase(R.mipmap.traduccion, "Traduccion e Interpretacion"),
+                                                  new ChatClase(R.mipmap.lingu, "Linguistica"),
+                                                  new ChatClase(R.mipmap.gramar, "Gramatica Inglesa"),
+                                                  new ChatClase(R.mipmap.ubasing, "Usos basicos de la lengua Inglesa"),
+                                                  new ChatClase(R.mipmap.ciencia, "Ciencias de la Salud"),
+                                                  new ChatClase(R.mipmap.audiovisual, "AudioVisuales")
                                                   );
         /*Llamada al adapter creado en la clase AdaptadorRecyView.java*/
         AdaptadorRecyView adapter = new AdaptadorRecyView(listaChat);

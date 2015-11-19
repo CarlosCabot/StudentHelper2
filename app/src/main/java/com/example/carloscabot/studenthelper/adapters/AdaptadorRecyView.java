@@ -16,9 +16,10 @@ import java.util.List;
 /**
  * Created by javier.suarez on 18/11/15.
  */
-public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.chatsUniversidad> {
+public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.ChatsUniversidad> {
 
     List<ChatClase> listaClases;
+    public static ChatClase itemList;
 
     /*Contructor del Adaptador*/
     public AdaptadorRecyView(List<ChatClase> listaClase){
@@ -26,14 +27,15 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.ch
     }
 
     @Override
-    public chatsUniversidad onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public ChatsUniversidad onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rowitem,viewGroup,false);
-        chatsUniversidad chatUsuarioholder = new chatsUniversidad(view);
+        ChatsUniversidad chatUsuarioholder = new ChatsUniversidad(view);
         return chatUsuarioholder;
     }
 
     @Override
-    public void onBindViewHolder(chatsUniversidad chatsUniversidad, int i) {
+    public void onBindViewHolder(ChatsUniversidad chatsUniversidad, int i) {
+        itemList= listaClases.get(i);
         chatsUniversidad.imagenAsignatura.setImageResource(listaClases.get(i).getFoto());
         chatsUniversidad.nombreAsignatura.setText(listaClases.get(i).getNombreAsignatura());
     }
@@ -44,10 +46,10 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.ch
     }
 
     /*Contructor del chat*/
-    public static class chatsUniversidad extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public static class ChatsUniversidad extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView imagenAsignatura;
         TextView nombreAsignatura;
-        public chatsUniversidad(View itemView) {
+        public ChatsUniversidad(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             imagenAsignatura = (ImageView) itemView.findViewById(R.id.iconoAsignatura);
@@ -56,26 +58,30 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.ch
 
         @Override
         public void onClick(View v) {
-            CharSequence nombreActual = nombreAsignatura.getText();
-            if (nombreActual == "Linguistica") {
+
+            String nombreActual= itemList.getNombreAsignatura();
+
+           // CharSequence nombreActual = nombreAsignatura.getText();
+            if (nombreActual.equals("Linguistica")) {
+
                 Toast.makeText(v.getContext(), "Acceso al Chat de Linguistica", Toast.LENGTH_SHORT).show();
             }
-            else if(nombreActual == "Filologia Inglesa e Hispanica"){
+            else if(nombreActual.equals("Filologia Inglesa e Hispanica")){
                 Toast.makeText(v.getContext(), "Acceso al Chat de Filologia Inglesa e Hispanica", Toast.LENGTH_SHORT).show();
             }
-            else if(nombreActual == "Traduccion e Interpretacion"){
+            else if(nombreActual.equals("Traduccion e Interpretacion")){
                 Toast.makeText(v.getContext(), "Acceso al Chat de Traduccion e Interpretacion", Toast.LENGTH_SHORT).show();
             }
-            else if(nombreActual == "Gramatica Inglesa"){
+            else if(nombreActual.equals("Gramatica Inglesa")){
                 Toast.makeText(v.getContext(), "Acceso al Chat de Gramatica Inglesa", Toast.LENGTH_SHORT).show();
             }
-            else if(nombreActual == "Usos basicos de la lengua Inglesa"){
+            else if(nombreActual.equals("Usos basicos de la lengua Inglesa")){
                 Toast.makeText(v.getContext(), "Acceso al Chat de Usos Basicos de la Lengua Inglesa", Toast.LENGTH_SHORT).show();
             }
-            else if(nombreActual == "Ciencias de la Salud"){
+            else if(nombreActual.equals("Ciencias de la Salud")){
                 Toast.makeText(v.getContext(), "Acceso al Chat de Ciencias de la Salud", Toast.LENGTH_SHORT).show();
             }
-            else if(nombreActual == "AudioVisuales"){
+            else if(nombreActual.equals("AudioVisuales")){
                 Toast.makeText(v.getContext(), "Acceso al Chat de AudioVisuales", Toast.LENGTH_SHORT).show();
             }
         }
