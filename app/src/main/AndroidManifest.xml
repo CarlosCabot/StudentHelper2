@@ -18,12 +18,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".loginActivity.LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".main.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.carloscabot.studenthelper.MainActivity" />
+                android:value="com.example.carloscabot.studenthelper.main.MainActivity" />
         </activity>
     </application>
 

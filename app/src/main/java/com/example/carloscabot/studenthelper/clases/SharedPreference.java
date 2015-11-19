@@ -1,4 +1,5 @@
-package com.example.carloscabot.studenthelper.clases; /**
+package com.example.carloscabot.studenthelper.clases;
+/**
  * Created by yincong.yu on 18/11/15.
  */
 
