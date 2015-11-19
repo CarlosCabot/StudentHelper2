@@ -106,8 +106,7 @@ public class MainActivity extends AppCompatActivity
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
-
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.custom_green_dark,this.getTheme()));
+        
         //TODO AQUI EDITAR LA BARRA
     }
 
