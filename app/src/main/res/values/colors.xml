@@ -2,18 +2,24 @@
 <resources>
     <drawable name="black">#000000</drawable>
     <drawable name="white">#ffffff</drawable>
-    <drawable name="blue">#0000ff</drawable>
-    <drawable name="gray">#808080</drawable>
     <drawable name="magenta">#ff0fff</drawable>
     <drawable name="cyan">#0fffff</drawable>
     <drawable name="orange">#FF7F50</drawable>
 
-    <drawable name="red">#FF6E6E</drawable>
-    <drawable name="dark_red">#DC6161</drawable>
+    <drawable name="gray">#CBCBCB</drawable>
 
-    <drawable name="green">#9DFF6C</drawable>
+    <drawable name="blue">#3369E8</drawable>
+    <drawable name="dark_blue">#0052cc</drawable>
+
+    <drawable name="red">#D50F25</drawable>
+    <drawable name="dark_red">#cc0000</drawable>
+
+    <drawable name="green">#009925</drawable>
     <drawable name="dark_green">#85D25E</drawable>
 
-    <drawable name="yellow">#FFFF4D</drawable>
-    <drawable name="dark_yellow">#DCDC47</drawable>
+    <drawable name="yellow">#EEB211</drawable>
+    <drawable name="dark_yellow">#cc9900</drawable>
+
+    <drawable name="custom_green_light">#3C7F7A</drawable>
+    <drawable name="custom_green_dark">#1E6661</drawable>
 </resources>
