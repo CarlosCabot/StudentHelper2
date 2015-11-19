@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.carloscabot.studenthelper.clases.ChatClase;
 import com.example.carloscabot.studenthelper.R;
@@ -27,8 +28,8 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.ch
     @Override
     public chatsUniversidad onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rowitem,viewGroup,false);
-        chatsUniversidad chatholder = new chatsUniversidad(view);
-        return chatholder;
+        chatsUniversidad chatUsuarioholder = new chatsUniversidad(view);
+        return chatUsuarioholder;
     }
 
     @Override
@@ -43,13 +44,40 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.ch
     }
 
     /*Contructor del chat*/
-    public static class chatsUniversidad extends RecyclerView.ViewHolder{
+    public static class chatsUniversidad extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView imagenAsignatura;
         TextView nombreAsignatura;
         public chatsUniversidad(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             imagenAsignatura = (ImageView) itemView.findViewById(R.id.iconoAsignatura);
             nombreAsignatura = (TextView) itemView.findViewById(R.id.tituloAsignatura);
+        }
+
+        @Override
+        public void onClick(View v) {
+            CharSequence nombreActual = nombreAsignatura.getText();
+            if (nombreActual == "Linguistica") {
+                Toast.makeText(v.getContext(), "Acceso al Chat de Linguistica", Toast.LENGTH_SHORT).show();
+            }
+            else if(nombreActual == "Filologia Inglesa e Hispanica"){
+                Toast.makeText(v.getContext(), "Acceso al Chat de Filologia Inglesa e Hispanica", Toast.LENGTH_SHORT).show();
+            }
+            else if(nombreActual == "Traduccion e Interpretacion"){
+                Toast.makeText(v.getContext(), "Acceso al Chat de Traduccion e Interpretacion", Toast.LENGTH_SHORT).show();
+            }
+            else if(nombreActual == "Gramatica Inglesa"){
+                Toast.makeText(v.getContext(), "Acceso al Chat de Gramatica Inglesa", Toast.LENGTH_SHORT).show();
+            }
+            else if(nombreActual == "Usos basicos de la lengua Inglesa"){
+                Toast.makeText(v.getContext(), "Acceso al Chat de Usos Basicos de la Lengua Inglesa", Toast.LENGTH_SHORT).show();
+            }
+            else if(nombreActual == "Ciencias de la Salud"){
+                Toast.makeText(v.getContext(), "Acceso al Chat de Ciencias de la Salud", Toast.LENGTH_SHORT).show();
+            }
+            else if(nombreActual == "AudioVisuales"){
+                Toast.makeText(v.getContext(), "Acceso al Chat de AudioVisuales", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }
