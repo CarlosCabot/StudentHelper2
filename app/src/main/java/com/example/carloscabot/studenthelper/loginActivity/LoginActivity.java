@@ -1,6 +1,5 @@
 package com.example.carloscabot.studenthelper.loginActivity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,25 +7,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.example.carloscabot.studenthelper.clases.SharedPreference;
 
 import com.example.carloscabot.studenthelper.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText textEtxt1;
-    private EditText textEtxt2;
-    private Button btn1;
-
     private String text1;
     private String text2;
 
     private SharedPreference sharedPreference;
-
-    Activity context = this;
 
     public void onclickLogin(View view) {
         EditText password = (EditText) findViewById(R.id.passwd);
@@ -35,35 +28,35 @@ public class LoginActivity extends AppCompatActivity {
             password.setError("Contraseña invalida!\nHay que ser 6 números o caracteres al menos!");
         } else if (pass.isEmpty()) {
             password.setError("Contraseña vacia!");
+        }else{
+            text2 = password.getText().toString();
         }
         EditText usuario = (EditText) findViewById(R.id.user);
         if (usuario.getText().toString().length() == 0) {
             usuario.setError("Tienes que completar usuario primero!");
+        }else {
+            text1 = usuario.getText().toString();
         }
-        if (!isValidPassword(pass) && (usuario.getText().toString().isEmpty())) {
-            Toast.makeText(getApplicationContext(), "Error!\nCampos vacios!", Toast.LENGTH_SHORT).show();
-        }
-        text1 = textEtxt1.getText().toString();
-        text2 = textEtxt2.getText().toString();
 
         // Hides the soft keyboard
         InputMethodManager imm1 = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm1.hideSoftInputFromWindow(textEtxt1.getWindowToken(), 0);
+        imm1.hideSoftInputFromWindow(usuario.getWindowToken(), 0);
         InputMethodManager imm2 = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm2.hideSoftInputFromWindow(textEtxt2.getWindowToken(), 0);
+        imm2.hideSoftInputFromWindow(password.getWindowToken(), 0);
 
         // Save the text in SharedPreference
-        sharedPreference.save(context, text1+""+text2);
-        Toast.makeText(context,
-                "Login con éxito.",
-                Toast.LENGTH_LONG).show();
-        finish();
-    }
+        sharedPreference.save(this, text1 + "" + text2);
 
-    private void findViewsById() {
-        textEtxt1 = (EditText) findViewById(R.id.user);
-        textEtxt2 = (EditText) findViewById(R.id.passwd);
-        btn1 = (Button) findViewById(R.id.login);
+        //Comprueba loa campos
+        if (!isValidPassword(pass) && (usuario.getText().toString().isEmpty())) {
+            Toast.makeText(getApplicationContext(), "Error!\nCampos vacios!", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getApplicationContext(),
+                    "Login con éxito.",
+                    Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
     }
 
     public void onclickcancel(View view) {
@@ -77,7 +70,6 @@ public class LoginActivity extends AppCompatActivity {
 
         sharedPreference = new SharedPreference();
 
-        findViewsById();
     }
 
     @Override
