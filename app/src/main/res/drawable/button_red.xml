@@ -4,4 +4,3 @@
     <item android:state_focused="true" android:drawable="@drawable/dark_red"/> <!-- focused -->
     <item android:drawable="@drawable/red"/> <!-- default -->
 </selector>
-

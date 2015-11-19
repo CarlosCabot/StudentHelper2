@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#54aeff">
+    android:background="#C3D9D8">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -12,13 +12,13 @@
         android:weightSum="1">
 
         <ImageView
-            android:layout_width="75dp"
-            android:layout_height="82dp"
+            android:layout_width="61dp"
+            android:layout_height="67dp"
             android:id="@+id/imageView"
             android:background="@android:drawable/btn_star_big_on"
             android:scaleType="center"
-            android:layout_marginTop="35dp"
-            android:layout_marginLeft="75dp" />
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="85dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,9 +26,10 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Quiz"
             android:id="@+id/textView2"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="60dp"
             android:textSize="50sp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold|italic"
+            android:textColor="#1E6661" />
     </LinearLayout>
 
     <Button
@@ -36,14 +37,13 @@
         android:layout_height="wrap_content"
         android:text="My Challenge"
         android:id="@+id/button"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="65dp"
         android:layout_weight="20"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:background="@drawable/button_yellow"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:background="@drawable/button_custom1"
+        android:textColor="#C3D9D8"
+        android:layout_marginBottom="5dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -53,10 +53,9 @@
         android:layout_weight="20"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:background="@drawable/button"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:background="@drawable/button_custom1"
+        android:textColor="#C3D9D8"
+        android:layout_marginBottom="5dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -65,10 +64,8 @@
         android:id="@+id/button3"
         android:layout_gravity="center_horizontal"
         android:layout_weight="20"
-        android:layout_marginBottom="10dp"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:background="@drawable/button_green"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp" />
+        android:background="@drawable/button_custom1"
+        android:textColor="#C3D9D8" />
 </LinearLayout>
