@@ -19,7 +19,6 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_juegos">JuegosActivity</string>
 
-
     <!--Juegos-->
     <string name="action_pregunta">Añadir Pregunta</string>
     <string name="action_ranking">Ver Ranking</string>

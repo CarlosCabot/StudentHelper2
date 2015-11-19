@@ -96,14 +96,6 @@ public class JuegosActivity extends AppCompatActivity {
         return true;
     }
 
-    public void onClickBack(View v){
-        try {
-            JuegosActivity.this.finish();
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-        }
-    }
-
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
@@ -124,11 +116,18 @@ public class JuegosActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_back) {
+            try {
+                JuegosActivity.this.finish();
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }

@@ -20,6 +20,7 @@
         <activity
             android:name=".loginActivity.LoginActivity"
             android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
             android:parentActivityName=".main.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -27,7 +28,8 @@
         </activity>
         <activity
             android:name=".juegosActivity.JuegosActivity"
-            android:label="@string/title_activity_juegos" >
+            android:label="@string/title_activity_juegos"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
