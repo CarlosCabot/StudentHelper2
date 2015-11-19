@@ -40,8 +40,6 @@ public class MainActivity extends AppCompatActivity
 
         SharedPreference sharedPreference = new SharedPreference();
 
-
-
         if(null==sharedPreference.getValue(this)){
             startActivity(new Intent(this, LoginActivity.class));
         }
