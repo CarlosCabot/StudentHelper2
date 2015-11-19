@@ -13,8 +13,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
-import android.view.View;
-import android.widget.Toast;
 
 import com.example.carloscabot.studenthelper.R;
 import com.example.carloscabot.studenthelper.fragments.ApuntesFragment;
@@ -115,7 +113,7 @@ public class MainActivity extends AppCompatActivity
 
         //Aqui cambiamos el color de la barra
         actionBar.setBackgroundDrawable(new ColorDrawable(0xff003333));
-
+ 
     }
 
 
@@ -145,14 +143,5 @@ public class MainActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onClickChallenge(View v){
-        //Intent intent = new Intent();
-        //startActivity(intent);
-        CharSequence c = "hola";
-        Context context = getApplicationContext();
-        Toast.makeText(context, c, Toast.LENGTH_LONG).show();
-
     }
 }
