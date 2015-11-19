@@ -1,5 +1,7 @@
 package com.example.carloscabot.studenthelper.main;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
@@ -106,8 +108,10 @@ public class MainActivity extends AppCompatActivity
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
-        
-        //TODO AQUI EDITAR LA BARRA
+
+        //Aqui cambiamos el color de la barra
+        actionBar.setBackgroundDrawable(new ColorDrawable(0xff003333));
+ 
     }
 
 
