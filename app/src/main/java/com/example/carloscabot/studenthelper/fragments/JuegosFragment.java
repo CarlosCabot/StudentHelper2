@@ -16,7 +16,7 @@ import com.example.carloscabot.studenthelper.R;
 /**
  * Created by carlos.cabot on 17/11/15.
  */
-public class JuegosFragment extends Fragment{
+public class JuegosFragment extends Fragment {
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -38,14 +38,10 @@ public class JuegosFragment extends Fragment{
     public JuegosFragment() {
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_juegos, container, false);
-
-
         return rootView;
     }
 
@@ -55,6 +51,7 @@ public class JuegosFragment extends Fragment{
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
+
 
 
 }
