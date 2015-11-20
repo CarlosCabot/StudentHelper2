@@ -1,6 +1,9 @@
 package com.example.carloscabot.studenthelper.loginActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 import com.example.carloscabot.studenthelper.clases.SharedPreference;
 
 import com.example.carloscabot.studenthelper.R;
+import com.example.carloscabot.studenthelper.main.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,13 +32,15 @@ public class LoginActivity extends AppCompatActivity {
             password.setError("Contraseña invalida!\nHay que ser 6 números o caracteres al menos!");
         } else if (pass.isEmpty()) {
             password.setError("Contraseña vacia!");
-        }else{
+        } else {
             text2 = password.getText().toString();
         }
         EditText usuario = (EditText) findViewById(R.id.user);
         if (usuario.getText().toString().length() == 0) {
-            usuario.setError("Tienes que completar usuario primero!");
-        }else {
+            usuario.setError("¡Tienes que completar usuario primero!");
+        } else if(usuario.getText().toString().contains(" ")){
+            usuario.setError("¡Usuario no puede tener espacio blanco!");
+        } else {
             text1 = usuario.getText().toString();
         }
 
@@ -48,9 +54,11 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreference.save(this, text1 + "" + text2);
 
         //Comprueba loa campos
-        if (!isValidPassword(pass) && (usuario.getText().toString().isEmpty())) {
-            Toast.makeText(getApplicationContext(), "Error!\nCampos vacios!", Toast.LENGTH_SHORT).show();
-        }else {
+        if ((null == text1) || null == text2) {
+            Toast.makeText(getApplicationContext(), "¡Error!\n¡Hay Campo vacio!", Toast.LENGTH_SHORT).show();
+        } else if (!isValidPassword(pass) && (usuario.getText().toString().isEmpty())) {
+            Toast.makeText(getApplicationContext(), "¡Error!\n¡Campos vacios!", Toast.LENGTH_SHORT).show();
+        } else {
             Toast.makeText(getApplicationContext(),
                     "Login con éxito.",
                     Toast.LENGTH_SHORT).show();
@@ -60,7 +68,37 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onclickcancel(View view) {
-        finish();
+
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(LoginActivity.this);
+
+        // Setting Dialog Title
+        alertDialog.setTitle("¿Confirma Cancelar");
+
+        // Setting Dialog Message
+        alertDialog.setMessage("¿Estas seguro que quieres cancelar Login?");
+
+        // Setting Positive "Yes" Button
+        alertDialog.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+                // Write your code here to invoke YES event
+                Toast.makeText(getApplicationContext(), "Has hecho clic el boton SI ", Toast.LENGTH_SHORT).show();
+                finishAffinity();
+
+            }
+        });
+
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to invoke NO event
+                Toast.makeText(getApplicationContext(), "Has hecho clic el boton NO", Toast.LENGTH_SHORT).show();
+                dialog.cancel();
+            }
+        });
+
+        // Showing Alert Message
+        alertDialog.show();
     }
 
     @Override

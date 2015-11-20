@@ -12,11 +12,14 @@ import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 
+import com.example.carloscabot.studenthelper.fragments.AsignaturaFragment;
 import com.example.carloscabot.studenthelper.fragments.NotasGeneralesFragment;
+import com.example.carloscabot.studenthelper.fragments.JuegosEditorFragment;
+import com.example.carloscabot.studenthelper.fragments.SettingsFragment;
 import com.example.carloscabot.studenthelper.juegosActivity.JuegosActivity;
 import com.example.carloscabot.studenthelper.R;
 import com.example.carloscabot.studenthelper.clases.SharedPreference;
-import com.example.carloscabot.studenthelper.fragments.AsignaturaFragment;
+import com.example.carloscabot.studenthelper.fragments.ApuntesFragment;
 import com.example.carloscabot.studenthelper.fragments.ChatFragment;
 import com.example.carloscabot.studenthelper.fragments.HomeFragment;
 import com.example.carloscabot.studenthelper.fragments.JuegosFragment;
@@ -36,15 +39,17 @@ public class MainActivity extends AppCompatActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    SharedPreference sharedPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreference sharedPreference = new SharedPreference();
+        sharedPreference = new SharedPreference();
 
         if(null==sharedPreference.getValue(this)){
             startActivity(new Intent(this, LoginActivity.class));
+            //finish();
         }
 
         setContentView(R.layout.activity_main);
@@ -61,30 +66,42 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment fragment=null;
-        switch (position){
-           case 0:
-               fragment = HomeFragment.newInstance(position + 1);
-               break;
-           case 1:
-               fragment = ChatFragment.newInstance(position + 1);
-               break;
-           case 2:
-               fragment = NotasFragment.newInstance(position + 1);
-               break;
-           case 3:
-               fragment = AsignaturaFragment.newInstance(position + 1);
-               break;
-           case 4:
-               fragment = JuegosFragment.newInstance(position + 1);
-               break;
-       }
+        if(position!=5) {
 
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
+            // update the main content by replacing fragments
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            Fragment fragment = null;
+            switch (position) {
+                case 0:
+                    fragment = HomeFragment.newInstance(position + 1);
+                    break;
+                case 1:
+                    fragment = ChatFragment.newInstance(position + 1);
+                    break;
+                case 2:
+                    fragment = NotasFragment.newInstance(position + 1);
+                    break;
+                case 3:
+                    fragment = AsignaturaFragment.newInstance(position + 1);
+                    break;
+                case 4:
+                    fragment = JuegosFragment.newInstance(position + 1);
+                    break;
+                case 6:
+                    fragment = SettingsFragment.newInstance(position + 1);
+                    break;
+            }
+
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+        }else{
+            sharedPreference.removeValue(this);
+            sharedPreference.clearSharedPreference(this);
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
+
     }
 
     public void onSectionAttached(int number) {
@@ -149,6 +166,29 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, JuegosActivity.class);
         startActivity(intent);
     }
+    public void onClickQuestion(View v){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int position = 5;
+        Fragment fragment;
+        fragment = JuegosEditorFragment.newInstance(1);
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+    }
+
+    public void onClickQuestionBack(View v){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int position = 5;
+        Fragment fragment;
+        fragment = JuegosFragment.newInstance(1);
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+    }
+    
+    
     public void onClickGeneral(View v) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragmentNotasGenerales = null;

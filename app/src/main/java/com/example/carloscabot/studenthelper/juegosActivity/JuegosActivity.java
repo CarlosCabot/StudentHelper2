@@ -1,6 +1,7 @@
 package com.example.carloscabot.studenthelper.juegosActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
@@ -50,13 +51,14 @@ public class JuegosActivity extends AppCompatActivity {
         }
     }
 
-    public void goBack(){
+    public void goBack() {
         try {
             JuegosActivity.this.finish();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,11 +69,13 @@ public class JuegosActivity extends AppCompatActivity {
         new CountDownTimer(30000, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                contador.setText(millisUntilFinished / 1000+"");
+                contador.setText(millisUntilFinished / 1000 + "");
 
-                if(Integer.parseInt(contador.getText().toString())==10){
+                if (Integer.parseInt(contador.getText().toString()) == 10) {
+                    contador.setTextColor(Color.rgb(255,0,0));
+
                     CharSequence charSequence = "Hurry up!";
-                    Toast.makeText(getApplicationContext(),charSequence,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), charSequence, Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -104,7 +108,6 @@ public class JuegosActivity extends AppCompatActivity {
 
         //Aqui cambiamos el color de la barra
         actionBar.setBackgroundDrawable(new ColorDrawable(0xff003333));
-
     }
 
 
@@ -128,6 +131,11 @@ public class JuegosActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
+    public void onClickGoBack(View v) {
+        try {
+            JuegosActivity.this.finish();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+    }
 }
