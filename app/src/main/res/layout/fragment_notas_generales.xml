@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3D9D8"
+    android:padding="45px">
+
+    <ImageView android:id="@+id/gen_graph"
+        android:layout_width="match_parent"
+        android:layout_height="480px"
+        android:src="@drawable/gen_graph"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEDIA DEL CURSO: 6.5"
+        android:layout_marginTop="20px"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEDIA DESEADA: 8"
+        android:layout_marginTop="20px"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEJOR ASIGNATURA: Estadística (EST)"
+        android:layout_marginTop="20px"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEDIA DESEADA: 8"
+        android:layout_marginTop="20px"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nueva media deseada:"
+            android:layout_marginTop="100px"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:id="@+id/textView3" />
+
+        <EditText
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edit_genNota"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/textView3"
+            android:layout_toLeftOf="@+id/introButton"
+            android:layout_toStartOf="@+id/introButton" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Introduce"
+            android:id="@+id/introButton"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_custom1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignTop="@+id/edit_genNota"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

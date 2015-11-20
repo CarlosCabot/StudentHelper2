@@ -1,46 +1,40 @@
 package com.example.carloscabot.studenthelper.fragments;
 
 import android.app.Activity;
-
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.carloscabot.studenthelper.main.MainActivity;
 import com.example.carloscabot.studenthelper.R;
+import com.example.carloscabot.studenthelper.main.MainActivity;
 
 /**
- * Created by carlos.cabot on 17/11/15.
+ * Created by gerard.visa on 19/11/15.
  */
-public class NotasFragment extends Fragment {
-    /**
-     * The fragment argument representing the section number for this
-     * fragment.
-     */
+public class NotasGeneralesFragment extends Fragment{
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     /**
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static NotasFragment newInstance(int sectionNumber) {
-        NotasFragment fragment = new NotasFragment();
+    public static NotasGeneralesFragment newInstance(int sectionNumber) {
+        NotasGeneralesFragment fragment = new NotasGeneralesFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public NotasFragment() {
+    public NotasGeneralesFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //Cambiar nombre al fragmen que toca
-        View rootView = inflater.inflate(R.layout.fragment_notas, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_notas_generales,container, false);
         return rootView;
     }
 

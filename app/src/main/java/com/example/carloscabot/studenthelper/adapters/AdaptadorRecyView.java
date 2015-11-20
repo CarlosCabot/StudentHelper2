@@ -28,7 +28,7 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.Ch
 
     @Override
     public ChatsUniversidad onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rowitem,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rowitem_chat,viewGroup,false);
         ChatsUniversidad chatUsuarioholder = new ChatsUniversidad(view);
         return chatUsuarioholder;
     }

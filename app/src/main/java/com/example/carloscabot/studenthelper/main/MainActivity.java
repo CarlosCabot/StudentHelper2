@@ -11,8 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
-import android.widget.Toast;
 
+import com.example.carloscabot.studenthelper.fragments.NotasGeneralesFragment;
 import com.example.carloscabot.studenthelper.fragments.JuegosEditorFragment;
 import com.example.carloscabot.studenthelper.fragments.SettingsFragment;
 import com.example.carloscabot.studenthelper.juegosActivity.JuegosActivity;
@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-
         if(position!=5) {
 
             // update the main content by replacing fragments
@@ -94,8 +93,8 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.container, fragment)
                     .commit();
         }else{
-                Intent intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }
 
     }
@@ -116,12 +115,6 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 5:
                 mTitle = getString(R.string.title_section5);
-                break;
-            case 6:
-                mTitle = getString(R.string.title_section6);
-                break;
-            case 7:
-                mTitle = getString(R.string.title_section7);
                 break;
         }
     }
@@ -168,7 +161,6 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, JuegosActivity.class);
         startActivity(intent);
     }
-
     public void onClickQuestion(View v){
         FragmentManager fragmentManager = getSupportFragmentManager();
         int position = 5;
@@ -188,6 +180,19 @@ public class MainActivity extends AppCompatActivity
 
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
+                .commit();
+    }
+    
+    
+    public void onClickGeneral(View v) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragmentNotasGenerales = null;
+
+        //Averiguar uso position
+        int position = 4;
+        fragmentNotasGenerales = NotasGeneralesFragment.newInstance(position + 1);
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragmentNotasGenerales)
                 .commit();
     }
 }

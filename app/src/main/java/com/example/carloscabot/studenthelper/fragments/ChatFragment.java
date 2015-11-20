@@ -49,20 +49,19 @@ public class ChatFragment extends Fragment {
                              Bundle savedInstanceState) {
         /*Creamos a partir del rootView en inglado del Layout*/
         View rootView = inflater.inflate(R.layout.fragment_chat, container, false);
-
         /*Creacion de la RecyclerView, findViewById se relaciona con el .xml que contendra esta RecyclerView*/
         RecyclerView rcview = (RecyclerView) rootView.findViewById(R.id.RecyclerView);
         /*Mangaer Layout, es un Layout dinamico para contener todos los elementos de nuestra lista*/
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rcview.setLayoutManager(llm);
         /*Creacion de los elementos de la lista en modo HARDCODE*/
-        List<ChatClase> listaChat = Arrays.asList(new ChatClase(R.mipmap.libro, "Filologia Inglesa e Hispanica"),
-                                                  new ChatClase(R.mipmap.traduccion, "Traduccion e Interpretacion"),
-                                                  new ChatClase(R.mipmap.lingu, "Linguistica"),
-                                                  new ChatClase(R.mipmap.gramar, "Gramatica Inglesa"),
-                                                  new ChatClase(R.mipmap.ubasing, "Usos basicos de la lengua Inglesa"),
+        List<ChatClase> listaChat = Arrays.asList(new ChatClase(R.mipmap.libro, "Filología Inglesa e Hispánica"),
+                                                  new ChatClase(R.mipmap.traduccion, "Traducción e Interpretación"),
+                                                  new ChatClase(R.mipmap.lingu, "Linguística"),
+                                                  new ChatClase(R.mipmap.gramar, "Gramática Inglesa"),
+                                                  new ChatClase(R.mipmap.ubasing, "Usos básicos de la lengua Inglesa"),
                                                   new ChatClase(R.mipmap.ciencia, "Ciencias de la Salud"),
-                                                  new ChatClase(R.mipmap.audiovisual, "AudioVisuales")
+                                                  new ChatClase(R.mipmap.audiovisual, "Audiovisuales")
                                                   );
         /*Llamada al adapter creado en la clase AdaptadorRecyView.java*/
         AdaptadorRecyView adapter = new AdaptadorRecyView(listaChat);
