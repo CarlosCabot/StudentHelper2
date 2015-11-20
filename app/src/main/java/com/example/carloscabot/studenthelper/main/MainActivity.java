@@ -39,12 +39,13 @@ public class MainActivity extends AppCompatActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    SharedPreference sharedPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreference sharedPreference = new SharedPreference();
+        sharedPreference = new SharedPreference();
 
         if(null==sharedPreference.getValue(this)){
             startActivity(new Intent(this, LoginActivity.class));
@@ -95,6 +96,8 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.container, fragment)
                     .commit();
         }else{
+            sharedPreference.removeValue(this);
+            sharedPreference.clearSharedPreference(this);
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
