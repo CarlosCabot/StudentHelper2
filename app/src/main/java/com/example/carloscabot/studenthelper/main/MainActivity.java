@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 
+import com.example.carloscabot.studenthelper.fragments.AsignaturaFragment;
 import com.example.carloscabot.studenthelper.fragments.NotasGeneralesFragment;
 import com.example.carloscabot.studenthelper.fragments.JuegosEditorFragment;
 import com.example.carloscabot.studenthelper.fragments.SettingsFragment;
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity
                     fragment = NotasFragment.newInstance(position + 1);
                     break;
                 case 3:
-                    fragment = ApuntesFragment.newInstance(position + 1);
+                    fragment = AsignaturaFragment.newInstance(position + 1);
                     break;
                 case 4:
                     fragment = JuegosFragment.newInstance(position + 1);
