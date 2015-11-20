@@ -1,25 +1,30 @@
 package com.example.carloscabot.studenthelper.adapters;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.carloscabot.studenthelper.clases.ChatClase;
 import com.example.carloscabot.studenthelper.R;
+import com.example.carloscabot.studenthelper.fragments.ChatFragment;
+import com.example.carloscabot.studenthelper.fragments.FilologiaInglesaHispanica;
 
 import java.util.List;
 
 /**
  * Created by javier.suarez on 18/11/15.
  */
-public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.ChatsUniversidad> {
+public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.ChatsUniversidad>{
 
     List<ChatClase> listaClases;
-    public static ChatClase itemList;
 
     /*Contructor del Adaptador*/
     public AdaptadorRecyView(List<ChatClase> listaClase){
@@ -28,16 +33,47 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.Ch
 
     @Override
     public ChatsUniversidad onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rowitem_chat,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rowitem_chat, viewGroup, false);
         ChatsUniversidad chatUsuarioholder = new ChatsUniversidad(view);
         return chatUsuarioholder;
     }
 
     @Override
     public void onBindViewHolder(ChatsUniversidad chatsUniversidad, int i) {
-        itemList= listaClases.get(i);
+        final ChatClase itemList = listaClases.get(i);
+
         chatsUniversidad.imagenAsignatura.setImageResource(listaClases.get(i).getFoto());
         chatsUniversidad.nombreAsignatura.setText(listaClases.get(i).getNombreAsignatura());
+        chatsUniversidad.layoutClickable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               String nombreActual= itemList.getNombreAsignatura();
+                Fragment fragment=null;
+                //CharSequence nombreActual = nombreAsignatura.getText();
+                if (nombreActual.equalsIgnoreCase("Linguística")) {
+                    Toast.makeText(v.getContext(), "Acceso al Chat de Linguistica", Toast.LENGTH_SHORT).show();
+                }
+                else if(nombreActual.equals("Filología Inglesa e Hispánica")){
+                    //fragment= FilologiaInglesaHispanica.newInstance("Filologia Inglesa e Hispanica");
+                    Toast.makeText(v.getContext(), "Acceso al Chat de Filologóa Inglesa e Hispónica", Toast.LENGTH_SHORT).show();
+                }
+                else if(nombreActual.equals("Traducción e Interpretación")){
+                    Toast.makeText(v.getContext(), "Acceso al Chat de Traducción e Interpretación", Toast.LENGTH_SHORT).show();
+                }
+                else if(nombreActual.equals("Gramótica Inglesa")){
+                    Toast.makeText(v.getContext(), "Acceso al Chat de Gramatica Inglesa", Toast.LENGTH_SHORT).show();
+                }
+                else if(nombreActual.equals("Usos bósicos de la lengua Inglesa")){
+                    Toast.makeText(v.getContext(), "Acceso al Chat de Usos Basicos de la Lengua Inglesa", Toast.LENGTH_SHORT).show();
+                }
+                else if(nombreActual.equals("Ciencias de la Salud")){
+                    Toast.makeText(v.getContext(), "Acceso al Chat de Ciencias de la Salud", Toast.LENGTH_SHORT).show();
+                }
+                else if(nombreActual.equals("AudioVisuales")){
+                    Toast.makeText(v.getContext(), "Acceso al Chat de AudioVisuales", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
@@ -45,45 +81,20 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.Ch
         return listaClases.size();
     }
 
+
     /*Contructor del chat*/
-    public static class ChatsUniversidad extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public static class ChatsUniversidad extends RecyclerView.ViewHolder {
+        RelativeLayout layoutClickable;
         ImageView imagenAsignatura;
         TextView nombreAsignatura;
         public ChatsUniversidad(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+
             imagenAsignatura = (ImageView) itemView.findViewById(R.id.iconoAsignatura);
             nombreAsignatura = (TextView) itemView.findViewById(R.id.tituloAsignatura);
-        }
+            layoutClickable=(RelativeLayout) itemView.findViewById(R.id.layout_clickable);
 
-        @Override
-        public void onClick(View v) {
-
-            String nombreActual= itemList.getNombreAsignatura();
-
-           // CharSequence nombreActual = nombreAsignatura.getText();
-            if (nombreActual.equals("Linguistica")) {
-
-                Toast.makeText(v.getContext(), "Acceso al Chat de Linguistica", Toast.LENGTH_SHORT).show();
-            }
-            else if(nombreActual.equals("Filologia Inglesa e Hispanica")){
-                Toast.makeText(v.getContext(), "Acceso al Chat de Filologia Inglesa e Hispanica", Toast.LENGTH_SHORT).show();
-            }
-            else if(nombreActual.equals("Traduccion e Interpretacion")){
-                Toast.makeText(v.getContext(), "Acceso al Chat de Traduccion e Interpretacion", Toast.LENGTH_SHORT).show();
-            }
-            else if(nombreActual.equals("Gramatica Inglesa")){
-                Toast.makeText(v.getContext(), "Acceso al Chat de Gramatica Inglesa", Toast.LENGTH_SHORT).show();
-            }
-            else if(nombreActual.equals("Usos basicos de la lengua Inglesa")){
-                Toast.makeText(v.getContext(), "Acceso al Chat de Usos Basicos de la Lengua Inglesa", Toast.LENGTH_SHORT).show();
-            }
-            else if(nombreActual.equals("Ciencias de la Salud")){
-                Toast.makeText(v.getContext(), "Acceso al Chat de Ciencias de la Salud", Toast.LENGTH_SHORT).show();
-            }
-            else if(nombreActual.equals("AudioVisuales")){
-                Toast.makeText(v.getContext(), "Acceso al Chat de AudioVisuales", Toast.LENGTH_SHORT).show();
-            }
         }
     }
+
 }
