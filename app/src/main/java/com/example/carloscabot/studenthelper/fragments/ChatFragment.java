@@ -49,7 +49,6 @@ public class ChatFragment extends Fragment {
                              Bundle savedInstanceState) {
         /*Creamos a partir del rootView en inglado del Layout*/
         View rootView = inflater.inflate(R.layout.fragment_chat, container, false);
-
         /*Creacion de la RecyclerView, findViewById se relaciona con el .xml que contendra esta RecyclerView*/
         RecyclerView rcview = (RecyclerView) rootView.findViewById(R.id.RecyclerView);
         /*Mangaer Layout, es un Layout dinamico para contener todos los elementos de nuestra lista*/

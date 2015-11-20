@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3D9D8">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Visión genérica"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/button_notasGeneral"
+        android:layout_marginTop="45px"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:onClick="onClickGeneral"
+        android:background="@drawable/button_custom1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="120px"
+        android:paddingLeft="30px"
+        android:paddingTop="25px"
+        android:text="ASIGNATURAS"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estadística"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/button_notasAsig1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/button_custom1"
+            android:layout_marginBottom="5dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Microbiología"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/button_notasAsig2"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/button_custom1"
+            android:layout_marginBottom="5dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Composición"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/button_notasAsig3"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/button_custom1"
+            android:layout_marginBottom="5dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Control de calidad"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/button_notasAsig4"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/button_custom1"
+            android:layout_marginBottom="5dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Analítica"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/button_notasAsig5"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/button_custom1"
+            android:layout_marginBottom="5dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Química"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/button_notasAsig6"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/button_custom1" />
+
+</LinearLayout>

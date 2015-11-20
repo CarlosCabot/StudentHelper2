@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_clickable"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <!--Contiene los elementos de nuestra RecyclerView-->
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/iconoAsignatura"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_alignBottom="@+id/tituloAsignatura" />
 
     <TextView
         android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
         android:id="@+id/tituloAsignatura"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/iconoAsignatura"
-        android:layout_toEndOf="@+id/iconoAsignatura" />
+        android:layout_toEndOf="@+id/iconoAsignatura"
+        android:layout_marginTop="25dp" />
 </RelativeLayout>

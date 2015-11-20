@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 
+import com.example.carloscabot.studenthelper.fragments.NotasGeneralesFragment;
 import com.example.carloscabot.studenthelper.juegosActivity.JuegosActivity;
 import com.example.carloscabot.studenthelper.R;
 import com.example.carloscabot.studenthelper.clases.SharedPreference;
@@ -147,5 +148,16 @@ public class MainActivity extends AppCompatActivity
     public void onClickChallenge(View v){
         Intent intent = new Intent(this, JuegosActivity.class);
         startActivity(intent);
+    }
+    public void onClickGeneral(View v) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragmentNotasGenerales = null;
+
+        //Averiguar uso position
+        int position = 4;
+        fragmentNotasGenerales = NotasGeneralesFragment.newInstance(position + 1);
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragmentNotasGenerales)
+                .commit();
     }
 }
