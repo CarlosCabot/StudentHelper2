@@ -56,6 +56,7 @@ public class AdaptadorRecyView extends RecyclerView.Adapter<AdaptadorRecyView.Ch
                 }
                 else if(nombreActual.equals("Filologia Inglesa e Hispanica")){
                     fragment= FilologiaInglesaHispanica.newInstance("Filologia Inglesa e Hispanica");
+
                     Toast.makeText(v.getContext(), "Acceso al Chat de Filologia Inglesa e Hispanica", Toast.LENGTH_SHORT).show();
                 }
                 else if(nombreActual.equals("Traduccion e Interpretacion")){
