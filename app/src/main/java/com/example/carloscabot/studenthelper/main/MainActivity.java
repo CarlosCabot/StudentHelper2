@@ -11,7 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
+import android.widget.Toast;
 
+import com.example.carloscabot.studenthelper.fragments.JuegosEditorFragment;
+import com.example.carloscabot.studenthelper.fragments.SettingsFragment;
 import com.example.carloscabot.studenthelper.juegosActivity.JuegosActivity;
 import com.example.carloscabot.studenthelper.R;
 import com.example.carloscabot.studenthelper.clases.SharedPreference;
@@ -60,30 +63,41 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment fragment=null;
-       switch (position){
-           case 0:
-               fragment = HomeFragment.newInstance(position + 1);
-               break;
-           case 1:
-               fragment = ChatFragment.newInstance(position + 1);
-               break;
-           case 2:
-               fragment = NotasFragment.newInstance(position + 1);
-               break;
-           case 3:
-               fragment = ApuntesFragment.newInstance(position + 1);
-               break;
-           case 4:
-               fragment = JuegosFragment.newInstance(position + 1);
-               break;
-       }
 
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
+        if(position!=5) {
+
+            // update the main content by replacing fragments
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            Fragment fragment = null;
+            switch (position) {
+                case 0:
+                    fragment = HomeFragment.newInstance(position + 1);
+                    break;
+                case 1:
+                    fragment = ChatFragment.newInstance(position + 1);
+                    break;
+                case 2:
+                    fragment = NotasFragment.newInstance(position + 1);
+                    break;
+                case 3:
+                    fragment = ApuntesFragment.newInstance(position + 1);
+                    break;
+                case 4:
+                    fragment = JuegosFragment.newInstance(position + 1);
+                    break;
+                case 6:
+                    fragment = SettingsFragment.newInstance(position + 1);
+                    break;
+            }
+
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+        }else{
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+        }
+
     }
 
     public void onSectionAttached(int number) {
@@ -102,6 +116,12 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 5:
                 mTitle = getString(R.string.title_section5);
+                break;
+            case 6:
+                mTitle = getString(R.string.title_section6);
+                break;
+            case 7:
+                mTitle = getString(R.string.title_section7);
                 break;
         }
     }
@@ -147,5 +167,27 @@ public class MainActivity extends AppCompatActivity
     public void onClickChallenge(View v){
         Intent intent = new Intent(this, JuegosActivity.class);
         startActivity(intent);
+    }
+
+    public void onClickQuestion(View v){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int position = 5;
+        Fragment fragment;
+        fragment = JuegosEditorFragment.newInstance(1);
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+    }
+
+    public void onClickQuestionBack(View v){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int position = 5;
+        Fragment fragment;
+        fragment = JuegosFragment.newInstance(1);
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
     }
 }

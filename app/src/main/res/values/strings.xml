@@ -6,6 +6,10 @@
     <string name="title_section3">Notas</string>
     <string name="title_section4">Apuntes</string>
     <string name="title_section5">Juegos</string>
+    <string name="title_section6">Cerrar Sesión</string>
+    <string name="title_section7">Settings</string>
+
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -22,5 +26,8 @@
     <!--Juegos-->
     <string name="action_pregunta">Añadir Pregunta</string>
     <string name="action_ranking">Ver Ranking</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
