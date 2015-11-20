@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity
 
         if(null==sharedPreference.getValue(this)){
             startActivity(new Intent(this, LoginActivity.class));
+            //finish();
         }
 
         setContentView(R.layout.activity_main);
