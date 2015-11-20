@@ -16,7 +16,7 @@ import com.example.carloscabot.studenthelper.fragments.NotasGeneralesFragment;
 import com.example.carloscabot.studenthelper.juegosActivity.JuegosActivity;
 import com.example.carloscabot.studenthelper.R;
 import com.example.carloscabot.studenthelper.clases.SharedPreference;
-import com.example.carloscabot.studenthelper.fragments.ApuntesFragment;
+import com.example.carloscabot.studenthelper.fragments.AsignaturaFragment;
 import com.example.carloscabot.studenthelper.fragments.ChatFragment;
 import com.example.carloscabot.studenthelper.fragments.HomeFragment;
 import com.example.carloscabot.studenthelper.fragments.JuegosFragment;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment=null;
-       switch (position){
+        switch (position){
            case 0:
                fragment = HomeFragment.newInstance(position + 1);
                break;
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
                fragment = NotasFragment.newInstance(position + 1);
                break;
            case 3:
-               fragment = ApuntesFragment.newInstance(position + 1);
+               fragment = AsignaturaFragment.newInstance(position + 1);
                break;
            case 4:
                fragment = JuegosFragment.newInstance(position + 1);
