@@ -8,6 +8,22 @@
     android:background="#fdf8ff"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="¿Nombre del sistema operativo basado en el núcleo Linux y diseñado principalmente para dispositivos móviles con pantalla táctil?"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@drawable/custom_green_dark"
+        android:autoText="false"
+        android:textSize="22sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -32,77 +48,84 @@
 
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="¿Nombre del sistema operativo basado en el núcleo Linux y diseñado principalmente para dispositivos móviles con pantalla táctil?"
-        android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal"
-        android:textStyle="bold"
-        android:textColor="@drawable/custom_green_dark"
-        android:autoText="false"
-        android:textSize="22sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_height="match_parent">
 
-    <RadioGroup
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RadioButton
+        <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="IOS"
-        android:id="@+id/Respuesta1"
-        android:layout_weight="1"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@drawable/custom_green_dark"
-        android:onClick="RadioButtonClicked" />
+            android:layout_gravity="center_horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IOS"
+            android:id="@+id/Respuesta1"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_gravity="center_horizontal|left"
+            android:textColor="@drawable/custom_green_dark"
+            android:onClick="RadioButtonClicked"
+            android:layout_marginTop="10dp" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Windows Mobile"
-        android:id="@+id/Respuesta2"
-        android:layout_weight="1"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:checked="false"
-        android:textColor="@drawable/custom_green_dark"
-        android:onClick="RadioButtonClicked" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Windows Mobile"
+            android:id="@+id/Respuesta2"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal|left"
+            android:checked="false"
+            android:textColor="@drawable/custom_green_dark"
+            android:onClick="RadioButtonClicked"
+            android:layout_marginTop="10dp" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Android"
-        android:id="@+id/Respuesta3"
-        android:layout_weight="1"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@drawable/custom_green_dark"
-        android:onClick="RadioButtonClicked" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android"
+            android:id="@+id/Respuesta3"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal|left"
+            android:textColor="@drawable/custom_green_dark"
+            android:onClick="RadioButtonClicked"
+            android:layout_marginTop="10dp" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blackberry"
-        android:id="@+id/Respuesta4"
-        android:layout_weight="1"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:textColor="@drawable/custom_green_dark"
-        android:onClick="RadioButtonClicked" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blackberry"
+            android:id="@+id/Respuesta4"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal|left"
+            android:layout_marginBottom="20dp"
+            android:textColor="@drawable/custom_green_dark"
+            android:onClick="RadioButtonClicked"
+            android:layout_marginTop="10dp" />
 
-</RadioGroup>
+    </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            android:id="@+id/button6"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_custom1"
+            android:textColor="#ffffff"
+            android:paddingRight="50dp"
+            android:paddingLeft="50dp"
+            android:onClick="onClickGoBack" />
+    </LinearLayout>
 
 
 </LinearLayout>
